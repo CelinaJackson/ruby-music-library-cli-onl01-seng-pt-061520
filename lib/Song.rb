@@ -76,7 +76,7 @@ end
   end
 
  def self.create_from_filename(filename)
-   self.new_from_filename(filename).save
+   @@all << self.new_from_filename(filename)
  end
 
 
