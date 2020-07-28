@@ -47,9 +47,8 @@ end
 
 def genres
   genres = @songs.collect do |song|
-    song.genre 
-  end 
-  genres.uniq 
-end
+    song.genre
+  end
+  genres.uniq
 end
 end
