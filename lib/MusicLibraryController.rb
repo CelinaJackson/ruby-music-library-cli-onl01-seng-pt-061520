@@ -91,4 +91,3 @@ class MusicLibraryController
   end
 
 end
-
