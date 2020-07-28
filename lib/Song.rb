@@ -63,12 +63,16 @@ def self.find_or_create_by_name
   self.find_by_name(name) || self.create(name)
 end
 
-def self.new_from_filename(song)
-    song_parts = song.split(" - ")
-    song_name = song_parts[1]
-    artist = Artist.find_or_create_by_name(song_parts[0])
-    genre = Genre.find_or_create_by_name(song_parts[2].split('.')[0])
-    self.create(song_name, artist, genre)
+ def self.new_from_filename(filename)
+    array = filename.split(" - ")
+
+    song_name = array[1]
+    artist_name = array[0]
+    genre_name = array[2].split(".mp3").join
+
+    artist = Artist.find_or_create_by_name(artist_name)
+    genre = Genre.find_or_create_by_name(genre_name)
+    self.new(song_name, artist, genre)
   end
 
  def self.create_from_filename(filename)
